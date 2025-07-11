@@ -1,0 +1,43 @@
+db:
+  username: postgres
+  password: Artyomlbch213853
+  pool:
+    size: 12
+    timeout: 20
+  pools:
+    - size: 12
+      timeout: 20
+    - size: 10
+      timeout: 30
+    - size: 15
+      timeout: 40
+
+  driver: PostgresDriver
+  url: postgres:5432
+  hosts: localhost,127.0.0.1
+
+logging:
+  level:
+    root: INFO
+    by.artyom.spring.database.repository.pool.ConnectionPool: INFO
+    by.artyom.spring.database.repository.pool: INFO
+
+  file:
+    name: by.artyom.logs
+    path: /
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_jpa
+    username: postgres
+    password: Artyomlbch213853
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties.hibernate:
+      show_sql: true
+      format_sql: true
+      hbm2ddl.auto: validate
