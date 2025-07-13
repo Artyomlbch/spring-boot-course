@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/api/v1/")
 public class GreetingController {
 
-    @ModelAttribute("roles")
+    @ModelAttribute("roles") // ВЫЗЫВАЕТСЯ ПЕРЕД КАЖДИМ ВЫЗОВОМ
     public List<Role> getRoles() {
         return Arrays.asList(Role.values());
     }
@@ -31,7 +31,7 @@ public class GreetingController {
                               @PathVariable("id") Integer id) {
 
         mv.setViewName("greeting/hello");
-        mv.addObject("user", new UserReadDto(1L, "Andrei"));
+//        mv.addObject("user", new UserReadDto(1L, "Andrei"));
 
         return mv;
     }

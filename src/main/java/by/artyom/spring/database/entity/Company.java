@@ -34,13 +34,4 @@ public class Company implements BaseEntity<Integer> {
     @Column(name = "description")
     private Map<String, String> locales = new HashMap<>();
 
-    @Override
-    public void setId(Integer id) {
-
-    }
-
-    @Override
-    public Integer getId() {
-        return 0;
-    }
 }

@@ -18,7 +18,7 @@ db:
 
 logging:
   level:
-    root: INFO
+#    root: ALL
     by.artyom.spring.database.repository.pool.ConnectionPool: INFO
     by.artyom.spring.database.repository.pool: INFO
 
@@ -27,6 +27,7 @@ logging:
     path: /
 
 spring:
+
   mvc:
     view:
       prefix: /WEB-INF/jsp/
@@ -41,3 +42,4 @@ spring:
       show_sql: true
       format_sql: true
       hbm2ddl.auto: validate
+    open-in-view: false
