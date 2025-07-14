@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bye</title>
 </head>
 <body>
-Bye ${requestScope.user.username}!
+<!--Bye ${requestScope.user.username}!-->
+<p th:text="|Bye ${session.user.username}|">Dummy Bye User</p>
 </body>
 </html>

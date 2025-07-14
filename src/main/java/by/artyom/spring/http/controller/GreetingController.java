@@ -5,6 +5,7 @@ import by.artyom.spring.database.repository.CompanyRepository;
 import by.artyom.spring.dto.UserReadDto;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,11 +22,21 @@ public class GreetingController {
         return Arrays.asList(Role.values());
     }
 
+    @GetMapping("/hello")
+    public String hello(Model model,
+                        @ModelAttribute UserReadDto userReadDto) {
+
+        System.out.println(userReadDto);
+//        model.addAttribute("user", userReadDto);
+        return "greeting/hello";
+
+    }
+
     @GetMapping("/hello/{id}")
     public ModelAndView hello(ModelAndView mv,
                               CompanyRepository companyRepository,
                               HttpServletRequest request,
-                              @RequestParam(value = "age", required = false) Integer age,
+                              @RequestParam(value = "age") Integer age,
                               @RequestHeader("accept") String accept,
                               @CookieValue("JSESSIONID") String sessionId,
                               @PathVariable("id") Integer id) {
